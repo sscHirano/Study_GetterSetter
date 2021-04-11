@@ -6,10 +6,9 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
-
     Manager* manager = new Manager();
-
+    manager->execute();
+    delete manager;
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
