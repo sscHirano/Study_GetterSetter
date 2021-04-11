@@ -7,17 +7,18 @@ Manager::Manager()
 
 void Manager::execute()
 {
-    // データベースから従業員情報を取得
+    // ① 管理者クラスは、データベースアクセスクラスから、従業員情報クラスを取得
     Employee* employee = mDatabase.readEmployeeData();
 
+    // ② 管理者クラスは、従業員情報クラスの情報を書き換え
     // 従業員情報を更新(苗字変更)
     employee->mName = "平野 太郎";
     // 従業員情報を更新(住所変更)
     employee->mAddress = "大阪市中央区";
 
-    // データベースへ書き込み
+    // ③ 管理者クラスは、書き換えた従業員情報クラスで、データベースアクセスクラスに、データベースを更新を要求
     mDatabase.writeEmployeeData(*employee);
-    // データベースの内容を出力
+    // ④ 管理者クラスは、データベースアクセスクラスに、現在の情報を出力するように依頼
     mDatabase.dump();
 
     // 終了処理
