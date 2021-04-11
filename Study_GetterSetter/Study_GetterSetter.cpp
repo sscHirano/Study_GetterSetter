@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include "Manager.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
+
+    Manager* manager = new Manager();
+
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
